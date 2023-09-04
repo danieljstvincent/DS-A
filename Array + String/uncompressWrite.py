@@ -1,16 +1,18 @@
 #uncompress and Write a function, uncompress, that takes in a string as an argument. The input string will be formatted into multiple groups according to the following pattern:
-# When we find a char in string we print that char the number amount of times of the previous charter
+# When we find a char in string we print that char the number amount of times.
 # Determine if it is a number.Determine
 # Contactain the number if there is more the one
 # Print that many charaters
 #
 def uncompress(s):
-    numbers = '0123456789'
+    uncompressed_string = ''
     result = []
+    # numbers = [1,2,3,4,5,6,7,8,9]
     i = 0
     j = 0
-    while j < len(s):
-        if s[j] in numbers:
+
+    while i < len(s):
+        if s[j].isdigit():
             j += 1
         else:
             num = int(s[i:j])
@@ -19,6 +21,8 @@ def uncompress(s):
             i = j
 
     return ''.join(result)
+
+
 #
 # for example, '2c' or '3a'.
 # The function should return an uncompressed version of the string where each 'char' of a group is repeated 'number' times consecutively. You may assume that the input string is well-formed according to the previously mentioned pattern.
