@@ -1,5 +1,5 @@
 def compress(s):
-  pass # todo
+  return
 
 print(compress('ccaaatsss')) # -> '2c3at3s'
 print(compress('ssssbbz')) # -> '4s2bz'

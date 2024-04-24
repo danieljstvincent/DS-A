@@ -1,5 +1,5 @@
 def uncompress(s):
-  pass # todo
+  return
 
 print(uncompress("2c3a1t")) # -> 'ccaaat'
 print(uncompress("4s2b")) # -> 'ssssbb'
