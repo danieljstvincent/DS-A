@@ -105,3 +105,18 @@ class FileReader:
             self.pointer += 1  # Move the file pointer
             count += 1
         return count
+    
+    '''
+    Solution 2
+    buf4 = [''] * 4         
+        read = 0
+        while read < n: 
+            count = read4(buf4)             # Read file into buf4 && count -> num of chars in buf4
+            if not count: break             # no of chars to read, EOF
+            count = min(count, n - read)    # if n = 5 and file size is 8, in second read you have to take only n-read i.e 5-4 = 1
+            buf[read:] = buf4[:count]       # Copy from buf4 to buf.
+            read += count
+        return read   
+
+    - List of thing to sto   
+    '''
