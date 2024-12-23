@@ -12,10 +12,34 @@ At the bottom of the file, there are sample function calls with example data and
 
 def two_sum(nums, target):
     """
-    Given an array of integers and a target integer, return indices of the 
-    two numbers such that they add up to target.
+    Given an array of integers (`nums`) and an integer (`target`), 
+    return indices of the two numbers such that they add up to `target`.
+    
+    Example:
+    nums = [2, 7, 11, 15], target = 9
+    two_sum(nums, target) -> [0, 1]
+    because nums[0] + nums[1] = 2 + 7 = 9
+
+     (O(n) time complexity), and no extra nested loops are needed.
     """
-    pass
+    # Dictionary to store { number: index }
+    value_to_index = {}
+
+    # Loop through each number in the list
+    for index, num in enumerate(nums):
+        complement = target - num
+        
+        # Check if the complement to the current number is in the dictionary
+        if complement in value_to_index:
+            # If found, return the two indices
+            return [value_to_index[complement], index]
+        
+        # Otherwise, store this number's index in the dictionary
+        value_to_index[num] = index
+    
+    # If no pair found, return None or an empty list
+    return None
+   
 
 def best_time_to_buy_and_sell_stock(prices):
     """
@@ -542,16 +566,16 @@ def trapping_rain_water(height):
 
 if __name__ == "__main__":
     # Array
-    print(two_sum([2,7,11,15], 9))                    # Expect indices of two numbers that add to 9, e.g. [0,1]
-    print(best_time_to_buy_and_sell_stock([7,1,5,3,6,4])) # Expect max profit, e.g. 5
-    print(contains_duplicate([1,2,3,1]))              # Expect True
-    print(product_of_array_except_self([1,2,3,4]))    # Expect [24,12,8,6]
-    print(maximum_subarray([-2,1,-3,4,-1,2,1,-5,4]))  # Expect 6 (subarray [4,-1,2,1])
-    print(maximum_product_subarray([2,3,-2,4]))       # Expect 6 (subarray [2,3])
-    print(find_minimum_in_rotated_sorted_array([3,4,5,1,2])) # Expect 1
-    print(search_in_rotated_sorted_array([4,5,6,7,0,1,2], 0)) # Expect 4
-    print(three_sum([-1,0,1,2,-1,-4]))                # Expect [[-1,-1,2],[-1,0,1]]
-    print(container_with_most_water([1,8,6,2,5,4,8,3,7]))     # Expect 49
+    print(two_sum([2,7,11,15], 9), "problem01")                    # Expect indices of two numbers that add to 9, e.g. [0,1]
+    print(best_time_to_buy_and_sell_stock([7,1,5,3,6,4]), "problem02") # Expect max profit, e.g. 5
+    print(contains_duplicate([1,2,3,1]), "problem03")              # Expect True
+    print(product_of_array_except_self([1,2,3,4]), "problem04")    # Expect [24,12,8,6]
+    print(maximum_subarray([-2,1,-3,4,-1,2,1,-5,4]), "problem05")  # Expect 6 (subarray [4,-1,2,1])
+    print(maximum_product_subarray([2,3,-2,4]), "problem06")       # Expect 6 (subarray [2,3])
+    print(find_minimum_in_rotated_sorted_array([3,4,5,1,2]), "problem06") # Expect 1
+    print(search_in_rotated_sorted_array([4,5,6,7,0,1,2], 0), "problem07") # Expect 4
+    print(three_sum([-1,0,1,2,-1,-4]), "problem07")                # Expect [[-1,-1,2],[-1,0,1]]
+    print(container_with_most_water([1,8,6,2,5,4,8,3,7]), "problem08")     # Expect 49
     
     # Binary
     print(sum_of_two_integers(1,2))                   # Expect 3
