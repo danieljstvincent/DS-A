@@ -31,11 +31,13 @@ def two_sum(nums, target):
         
         # Check if the complement to the current number is in the dictionary
         if complement in value_to_index:
+            print(complement, "complement")
             # If found, return the two indices
             return [value_to_index[complement], index]
         
         # Otherwise, store this number's index in the dictionary
         value_to_index[num] = index
+        print(value_to_index, "value_to_index")
     
     # If no pair found, return None or an empty list
     return None
@@ -43,28 +45,71 @@ def two_sum(nums, target):
 
 def best_time_to_buy_and_sell_stock(prices):
     """
-    Given an array prices where prices[i] is the price of a given stock on the i-th day,
+    Given an array 'prices' where prices[i] is the price of a given stock on the i-th day,
     return the maximum profit you can achieve by buying and selling one share of stock.
+    
+    You must buy before you sell, but you cannot buy and sell on the same day.
+    If no profit is possible, return 0.
+
+    Example:
+    prices = [7,1,5,3,6,4] -> 5
+    Explanation: Buy on day 2 (price = 1) and sell on day 5 (price = 6),
+    profit = 6 - 1 = 5.
+
+
+
+    solution 1:  
     """
-    pass
+    min_price = float('inf') #of the lowest price found so far
+    max_profit = 0           # Keep track of the maximum profit so far
+
+    for price in prices:
+        # Update min_price if a new lower price is found
+        if price < min_price:
+            min_price = price
+        # Otherwise, check if selling at this price yields a better profit
+        elif price - min_price > max_profit:
+            max_profit = price - min_price
+
+    return max_profit
 
 def contains_duplicate(nums):
     """
     Given an integer array nums, return true if any value appears at least twice in the array.
+    space O(n) and Time O(n)
     """
-    pass
+    return len(set(nums)) < len(nums)
 
 def product_of_array_except_self(nums):
     """
     Given an integer array nums, return an array answer such that answer[i] is equal to
-    the product of all the elements of nums except nums[i].
+    the product of all the elements of nums except nums[i]. asdf
+    -Create a piece of software sung hashmap that output birthdays
     """
-    pass
+    res = [1] * (len(nums))
+
+
+    prefix = 1
+    for i in range(len(nums)):
+        res[i] = prefix
+        prefix *= nums[i]
+    
+    print(res)
+
+    postfix = 1
+    for i in range(len(nums) -1, -1, -1):
+        res[i] *= postfix
+        postfix *= nums[i]
+
+    return res
+        
 
 def maximum_subarray(nums):
     """
     Given an integer array nums, find the contiguous subarray (containing at least one number)
     which has the largest sum.
+
+    Use  Kadane’s Algorithm(Dynamic Programing)
     """
     pass
 
@@ -87,7 +132,25 @@ def search_in_rotated_sorted_array(nums, target):
     Given the array nums after rotation and an integer target, return the index of target if it is in nums,
     or -1 if it is not in nums.
     """
-    pass
+    left, right = 0, len(nums) - 1
+
+    # If the array is not rotated at all, 
+    # the first element will be smaller than the last.
+    if nums[left] < nums[right]:
+        return nums[left]
+
+    while left < right:
+        mid = (left + right) // 2
+        
+        # If nums[mid] > nums[right], the pivot is in the right half
+        if nums[mid] > nums[right]:
+            left = mid + 1
+        else:
+            right = mid
+
+    # At this point left == right, which should be the index of the smallest element
+    return nums[left]
+
 
 def three_sum(nums):
     """
