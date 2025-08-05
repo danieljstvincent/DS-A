@@ -1,0 +1,37 @@
+import random
+
+choices = ["rock", "paper", "scissors"]
+score = 0  # Initialize score counter
+
+while True:
+    personal_choice = input("\nChoose rock, paper, or scissors (or type 'quit' to exit): ").lower()
+
+    if personal_choice == 'quit':
+        print(f"\nFinal Score: {score}")
+        break
+
+    if personal_choice not in choices:
+        print("Invalid choice, try again.")
+        continue
+
+    computer_choice = random.choice(choices)
+    print(f"You chose: {personal_choice}")
+    print(f"Computer chose: {computer_choice}")
+
+    if personal_choice == computer_choice:
+        print("It's a tie!")
+    elif (
+        (personal_choice == "rock" and computer_choice == "scissors") or
+        (personal_choice == "scissors" and computer_choice == "paper") or
+        (personal_choice == "paper" and computer_choice == "rock")
+    ):
+        print("You win!")
+        score += 1  # Add to score
+    else:
+        print("You lose!")
+
+    print(f"Current Score: {score}")
+
+
+#Time COmplexity O^2
+#Space Complexity O^1
