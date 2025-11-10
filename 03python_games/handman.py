@@ -1,20 +1,27 @@
 "While attempts is and All the letter are not guessed, Keep running"
+""" 
+A way to guess letter by letter
+a loop that goes until all the attempts are used or all the letters are guess
+
+ """
 import random
 
-words = ["cat","dog","fish", "pig"]
-word = random.choice(words)
-guessed = ['_'] * len(words)
-attempts = 10
+animals = ["dog","cat","frog"]
+animal = random.choice(animals)
+guessed = "_" * len(animal)
+attempts = 6
 
 
-while attempts > 0 and '_' in guessed:
-    print(' '.join(guessed))
-    guess = input(f"Attempts left: {attempts}. Guess a letter: ").lower()
 
-    if guess in word:
-        for i, letter in enumerate(word):
+while attempts > 0 and  '_' and guessed:
+    print(''.join(guessed))
+    guess = input(f"You have {attempts}. left Guess a letter: ").lower()
+
+    if guess in animal:
+        for i, letter in enumerate(animal):
             if letter == guess:
-                guessed[i] = guess
+                guessed[i] = letter
+        print(guessed)
     else:
-        attempts -= 1 
-        print("Your answer is wrong")
+        attempts -= 1
+        print("wrong guess!")
