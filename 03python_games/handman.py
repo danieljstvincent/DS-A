@@ -6,22 +6,12 @@ a loop that goes until all the attempts are used or all the letters are guess
  """
 import random
 
-animals = ["dog","cat","frog"]
-animal = random.choice(animals)
-guessed = "_" * len(animal)
+names = ["Daniel", "Dillon", "Gizzell"]
+name = random.choice(names)
+gessed = "_" * len(name)
 attempts = 6
 
+gessus = input(f"Guessed left {attempts}")
 
-
-while attempts > 0 and  '_' and guessed:
-    print(''.join(guessed))
-    guess = input(f"You have {attempts}. left Guess a letter: ").lower()
-
-    if guess in animal:
-        for i, letter in enumerate(animal):
-            if letter == guess:
-                guessed[i] = letter
-        print(guessed)
-    else:
-        attempts -= 1
-        print("wrong guess!")
+while attempts > 0 and "_" in gessed:
+    ''.join(g)
