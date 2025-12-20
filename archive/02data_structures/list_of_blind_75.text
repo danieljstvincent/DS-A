@@ -1,0 +1,74 @@
+Two Sums: Hash map to store numbers and their indices. Check if target - num exists in the map. O(n) time, O(n) space.
+Best Time to Buy and Sell Stock: Keep track of the minimum price seen so far and the maximum profit. O(n) time, O(1) space.
+Contains Duplicate: Use a set to check for duplicates. O(n) time, O(n) space.
+Product of Array Except Self: Calculate prefix and suffix products. O(n) time, O(n) space.
+Maximum Subarray: Kadane's algorithm. O(n) time, O(1) space.
+Maximum Product Subarray: Similar to Maximum Subarray, but track both maximum and minimum products. O(n) time, O(1) space.
+Find Minimum in Rotated Sorted Array: Binary search. O(log n) time, O(1) space.
+Search in Rotated Sorted Array: Modified binary search. O(log n) time, O(1) space.
+3Sum: Sort the array and use two pointers. O(n^2) time, O(1) space (excluding sorting).
+Container With Most Water: Two pointers from the edges. O(n) time, O(1) space.
+Sum of Two Integers: Bitwise operations. O(1) time, O(1) space.
+Number of 1 Bits: Bitwise operations. O(1) time, O(1) space.
+Counting Bits: Dynamic programming. O(n) time, O(n) space.
+Missing Number: Bitwise XOR or sum calculation. O(n) time, O(1) space.
+Reverse Bits: Bitwise operations. O(1) time, O(1) space.
+Climbing Stairs: Dynamic programming or Fibonacci. O(n) time, O(n) or O(1) space.
+Coin Change: Dynamic programming. O(amount * number of coins) time, O(amount) space.
+Longest Increasing Subsequence: Dynamic programming or binary search with patience sorting. O(n^2) or O(n log n) time, O(n) space.
+Longest Common Subsequence: Dynamic programming. O(m*n) time, O(m*n) space.
+Word Break Problem: Dynamic programming. O(n*m) time, O(n) space.
+Combination Sum: Backtracking. O(2^n) time in worst case, O(target) space for recursion stack.
+House Robber: Dynamic programming. O(n) time, O(n) or O(1) space.
+House Robber II: Similar to House Robber, but handle the circular case. O(n) time, O(1) space.
+Decode Ways: Dynamic programming. O(n) time, O(n) or O(1) space.
+Unique Paths: Dynamic programming or combinatorics. O(m*n) time, O(m*n) or O(min(m,n)) space.
+Jump Game: Greedy. O(n) time, O(1) space.
+Clone Graph: Breadth-first search (BFS) or depth-first search (DFS). O(n + m) time and space.
+Course Schedule: Topological sort (BFS or DFS). O(V + E) time and space.
+Pacific Atlantic Water Flow: DFS or BFS from the edges. O(m*n) time and space.
+Number of Islands: DFS or BFS. O(m*n) time and space.
+Longest Consecutive Sequence: Use a set and iterate. O(n) time, O(n) space.
+Alien Dictionary: Topological sort. O(V + E) time and space.
+Graph Valid Tree: DFS or BFS. O(V + E) time and space.
+Number of Connected Components in an Undirected Graph: DFS or Union Find. O(V + E) time and O(V) space.
+Insert Interval: Linear scan and merge. O(n) time, O(n) space.
+Merge Intervals: Sort intervals and merge. O(n log n) time, O(n) space.
+Non-overlapping Intervals: Similar to merge intervals. O(n log n) time, O(n) space.
+Meeting Rooms: Sort by start times. O(n log n) time, O(1) space.
+Meeting Rooms II: Min-heap. O(n log n) time, O(n) space.
+
+#LINKLIST
+Reverse a Linked List: Iterative or recursive. O(n) time, O(1) or O(n) space.
+Detect Cycle in a Linked List: Floyd's cycle-finding algorithm (tortoise and hare). O(n) time, O(1) space.
+Merge Two Sorted Lists: Iterative or recursive. O(n + m) time, O(1) or O(n+m) space.
+Merge K Sorted Lists: Min-heap or divide and conquer. O(n log k) time, O(k) space.
+Remove Nth Node From End Of List: Two pointers. O(n) time, O(1) space.
+Reorder List: Find middle, reverse second half, merge. O(n) time, O(1) space.
+Set Matrix Zeroes: Use first row and column as markers. O(m*n) time, O(1) space.
+Spiral Matrix: Simulate the traversal. O(m*n) time, O(1) space.
+Rotate Image: In-place rotation. O(n^2) time, O(1) space.
+Word Search: Backtracking. O(m*n*4^L) time, O(L) space.
+Longest Substring Without Repeating Characters: Sliding window. O(n) time, O(min(m, n)) space.
+Longest Repeating Character Replacement: Sliding window. O(n) time, O(1) space.
+Minimum Window Substring: Sliding window. O(S + T) time, O(T) space.
+Valid Anagram: Hash map or sorting. O(n) or O(n log n) time, O(1) space.
+Group Anagrams: Hash map. O(n*k) time, O(n) space.
+Valid Parentheses: Stack. O(n) time, O(n) space.
+Valid Palindrome: Two pointers. O(n) time, O(1) space.
+Longest Palindromic Substring: Dynamic programming or expanding around center. O(n^2) time, O(n^2) or O(1) space.
+Palindromic Substrings: Expanding around center. O(n^2) time, O(1) space.
+Encode and Decode Strings: Variable length encoding. O(n) time and space.
+Maximum Depth of Binary Tree: DFS or BFS. O(n) time, O(h) space.
+Same Tree: Recursive or iterative. O(n) time, O(h) space.
+Invert/Flip Binary Tree: Recursive or iterative. O(n) time, O(h) space.
+Binary Tree Maximum Path Sum: DFS. O(n) time, O(h) space.
+Binary Tree Level Order Traversal: BFS. O(n) time, O(w) space.
+Serialize and Deserialize Binary Tree: Preorder traversal. O(n) time and space.
+Subtree of Another Tree: Recursive. O(s*t) time, O(h) space.
+Construct Binary Tree from Preorder and Inorder Traversal: Recursive. O(n) time, O(n) space.
+Validate Binary Search Tree: Inorder traversal or recursive. O(n) time, O(h) space.
+Kth Smallest Element in a BST: Inorder traversal. O(n) time, O(h) space.
+Lowest Common Ancestor of BST: Iterative or recursive. O(h) time, O(h) space.
+Implement Trie (Prefix Tree): Trie data structure. O(m) time for insert/search, O(alphabet size * total number of characters) space.
+Add and Search Word: Trie with backtracking for '.'. O(m) for add, O(26^n) in worst case search.
