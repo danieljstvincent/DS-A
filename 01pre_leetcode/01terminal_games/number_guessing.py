@@ -1,37 +1,65 @@
-""" 
-1. generate number 1-10
-. limit to 3 guesses
-2. input to guess
-3. To the user higher or lower
-4
-5. If they guess correct "w" and if not "L"
-
 """
+Number Guessing Game
+
+Guess the number between 1 and 10 in 3 attempts!
+"""
+
 import random
+import os
 
-list_of_numbers = range(1,11)
-number_selected = random.choice(list_of_numbers)
-attempts = 3
+def clear_screen():
+    """Clear the terminal screen."""
+    os.system('cls' if os.name == 'nt' else 'clear')
 
-
-while attempts != 0: 
-    guess = input(f"please enter a number 1-10: ")
-    guess = int(guess)
-
-    if guess == number_selected:
-        print("Congrats you Win")
-        break
+def main():
+    """Main game loop."""
+    clear_screen()
+    print("=" * 50)
+    print("🎯 NUMBER GUESSING GAME 🎯")
+    print("=" * 50)
+    print("\nI'm thinking of a number between 1 and 10.")
+    print("You have 3 attempts to guess it!\n")
     
+    number_selected = random.randint(1, 10)
+    attempts = 3
+    guess = None
+    
+    while attempts > 0:
+        try:
+            guess = int(input(f"Attempts left: {attempts}. Enter your guess (1-10): "))
+            
+            if guess < 1 or guess > 10:
+                print("Please enter a number between 1 and 10!")
+                continue
+            
+            if guess == number_selected:
+                print("\n" + "=" * 50)
+                print("🎉🎉🎉 Congratulations! You Win! 🎉🎉🎉")
+                print(f"You guessed the number: {number_selected}")
+                print("=" * 50)
+                break
+            
+            elif guess < number_selected:
+                print("📈 Guess Higher!")
+            else:
+                print("📉 Guess Lower!")
+            
+            attempts -= 1
+            
+            if attempts > 0:
+                print()
+        
+        except ValueError:
+            print("Please enter a valid number!")
+    
+    if attempts == 0 and guess != number_selected:
+        print("\n" + "=" * 50)
+        print("💀 Game Over! You ran out of attempts!")
+        print(f"The correct number was: {number_selected}")
+        print("=" * 50)
+    
+    input("\nPress Enter to return to menu...")
 
-    elif guess < number_selected:
-        print("Guess Higher")
-        attempts -= 1
-  
-    else:
-        guess > number_selected
-        print ("guess lower")
-        attempts -= 1
-
-if attempts == 0 and guess != number_selected:
-    print(f"Game Over! The correct number was {number_selected}")
+if __name__ == "__main__":
+    main()
 
