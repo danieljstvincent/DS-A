@@ -2,12 +2,38 @@
 
 A collection of terminal-based games implemented in Python, designed for learning data structures and algorithms.
 
+## Prerequisites
+
+- **Python 3.7 or higher**
+- No external dependencies required (uses only Python standard library)
+- A terminal/console that supports Unicode characters (for chess pieces and emojis)
+
+## Installation
+
+No installation needed! Just clone the repository and run:
+
+```bash
+python main.py
+```
+
+Or if you prefer Python 3 explicitly:
+
+```bash
+python3 main.py
+```
+
 ## 📁 Project Structure
 
 ```
 01terminal_games/
 ├── main.py                 # Main launcher - run this to play any game
 ├── game_functions.py       # Function stubs - think through game logic here
+├── utils.py                # Shared utilities (clear_screen, input validation, etc.)
+├── requirements.txt        # Python requirements (standard library only)
+├── .gitignore              # Git ignore file
+├── README.md               # This file
+├── QUICK_START.md          # Quick start guide for learners
+├── PROGRESS.md             # Progress tracking template
 ├── solutions/              # Documentation folder
 │   └── solutions.md        # Detailed solutions and algorithm explanations
 ├── hangman.py              # Full game implementations
