@@ -1,0 +1,15 @@
+# Terminal Games Collection - Requirements
+# Python 3.7 or higher required
+
+# No external dependencies required
+# This project uses only Python standard library modules:
+# - os (for clear_screen)
+# - random (for game randomness)
+# - sys (for exit handling)
+
+# For optimal experience, ensure you have:
+# - Python 3.7+ installed
+# - A terminal/console that supports:
+#   - ANSI escape codes (for better display on Unix-like systems)
+#   - Unicode characters (for chess pieces and emojis)
+
